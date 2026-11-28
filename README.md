@@ -75,6 +75,12 @@ kbb --backend sci scripts/verify-pinned-surface.cljk        # 0 match · 1 drift
 Three outcomes, not two. Exit 2 means the app checkout was not found and
 **nothing was compared** — which is not a pass.
 
+## Agent execution research
+
+- [Itonami Cloud agent execution design proposal](90-docs/itonami-cloud-agent-execution.md)
+- [Local SpinKube and wasmCloud v2 startup and latency benchmark](90-docs/itonami-cloud-runtime-benchmark-2026-11-28.md)
+- [100-workload memory benchmark and hosting cost estimates](90-docs/itonami-cloud-100-agent-capacity-2026-11-28.md)
+
 ## Tests
 
 ```bash
