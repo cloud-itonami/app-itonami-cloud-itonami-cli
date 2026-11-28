@@ -92,3 +92,5 @@ Bot profile と L5 manifest は互換性を維持し、Run request は配置と�
 初回の計測では、受理から起動までの時間、executor の起動時間、初回出力までの時間、復旧時間、Run ごとの推論消費を記録する。ローカルと Otehon で同じ入力・モデル・計測条件を使い、試行数と環境を併記する。Kubernetes 対応は、運用対象が既存クラスタを必要とするか、測定したキュー滞留・復旧時間・運用工数が単一 Node の構成では目標を満たせない場合に比較する。候補は wasmCloud v2 の Wasm workload と SpinKube の SpinApp で、同じ権限と復旧の受入条件を課す。
 
 同一の Wasm HTTP コンポーネントを使ったローカル kind での予備実測では、再デプロイから初回応答までの中央値は SpinKube 1.521 秒、wasmCloud v2 0.755 秒だった。Agent の実行経路は今後の受入で検証する。[2026-11-28 のローカル実測](itonami-cloud-runtime-benchmark-2026-11-28.md)
+
+同じ Wasm を 100 workload として配置した追加測定では、100 接続の負荷時の VM 全体 RAM は SpinKube 4.09 GiB、wasmCloud v2 1.58 GiBだった。共有ホストの RAM、Agent の常駐状態、推論の費用を別々に見積もる。[2026-11-28 の 100 workload 実測・料金試算](itonami-cloud-100-agent-capacity-2026-11-28.md)
